@@ -1,0 +1,559 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; background:#06070A; color:#EDEFF3; font-family:'Manrope','Segoe UI',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3,h4 { font-family:'Sora','Segoe UI',system-ui,sans-serif; font-weight:600; margin:0; letter-spacing:-0.03em; }
+    p { margin:0; }
+    a { color:#5B8CFF; text-decoration:none; }
+    a:hover { color:#8FB0FF; }
+    .wrap { padding:0 24px; }
+    .eyebrow { font-family:'JetBrains Mono',ui-monospace,Consolas,monospace; font-size:10.5px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#767E8D; }
+    .mono { font-family:'JetBrains Mono',ui-monospace,Consolas,monospace; }
+    .h2m { font-size:30px; line-height:1.12; color:#FFFFFF; text-wrap:balance; }
+    .lead { font-size:16px; line-height:1.7; color:#A2AAB8; text-wrap:pretty; }
+
+    .btn { display:flex; align-items:center; justify-content:center; gap:9px; font-family:'Manrope',sans-serif; font-weight:600; font-size:15.5px; line-height:1; height:52px; padding:0 22px; border-radius:10px; border:1px solid transparent; cursor:pointer; transition:transform 250ms cubic-bezier(0.16,1,0.3,1), box-shadow 250ms cubic-bezier(0.16,1,0.3,1), background-color 250ms cubic-bezier(0.16,1,0.3,1), border-color 250ms cubic-bezier(0.16,1,0.3,1), color 250ms cubic-bezier(0.16,1,0.3,1); }
+    .btn-primary { background:#2558E6; color:#FFFFFF; box-shadow:0 14px 34px -14px rgba(37,88,230,0.95); }
+    .btn-primary:hover { background:#2E6BFF; transform:translateY(-2px); }
+    .btn-ghost { background:transparent; color:#EDEFF3; border-color:#2A303C; }
+    .btn-ghost:hover { background:#12151C; color:#FFFFFF; border-color:#3A4353; }
+    .btn:focus-visible { outline:none; box-shadow:0 0 0 3px rgba(46,107,255,0.35); }
+
+    .card { background:#12151C; border:1px solid #232833; border-radius:16px; transition:transform 250ms cubic-bezier(0.16,1,0.3,1), border-color 250ms cubic-bezier(0.16,1,0.3,1); }
+    .card:hover { transform:translateY(-2px); border-color:#2A303C; }
+    .textlink { display:inline-flex; align-items:center; gap:7px; font-size:14.5px; font-weight:600; color:#5B8CFF; transition:gap 250ms cubic-bezier(0.16,1,0.3,1); }
+    .textlink:hover { gap:11px; color:#8FB0FF; }
+
+    .grid-bg { background-image:linear-gradient(to right,#141822 1px,transparent 1px),linear-gradient(to bottom,#141822 1px,transparent 1px); background-size:40px 40px; }
+
+    @keyframes elevaPulse { 0%, 100% { opacity:0.82; } 50% { opacity:1; } }
+    .pulse { animation:elevaPulse 4s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+  </style>
+</helmet>
+
+<div style="width:390px; background:#0B0D12; font-family:'Manrope','Segoe UI',system-ui,sans-serif; position:relative; overflow:hidden;">
+
+  <!-- ============ HERO ============ -->
+  <div style="position:relative; padding-bottom:36px;">
+    <div class="grid-bg" style="position:absolute; inset:0; opacity:0.5;"></div>
+    <div class="pulse" style="position:absolute; top:-180px; right:-200px; width:560px; height:560px; background:radial-gradient(circle at 50% 50%, rgba(46,107,255,0.26) 0%, rgba(46,107,255,0.05) 45%, rgba(11,13,18,0) 70%);"></div>
+
+    <div class="wrap" style="position:relative; height:64px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; align-items:center; gap:9px;">
+        <svg viewBox="0 0 32 32" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+          <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+        </svg>
+        <span style="font-family:'Sora',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.17em; color:#FFFFFF;">ELEVA</span>
+      </div>
+      <button type="button" style="width:48px; height:48px; border-radius:10px; background:transparent; border:1px solid #232833; display:flex; align-items:center; justify-content:center; cursor:pointer;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#EDEFF3" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+
+    <div class="wrap" style="position:relative; padding-top:40px; display:flex; flex-direction:column; gap:20px;">
+      <div style="display:inline-flex; align-items:center; gap:8px; align-self:flex-start; padding:7px 12px 7px 9px; border-radius:999px; background:rgba(46,107,255,0.1); border:1px solid rgba(46,107,255,0.26);">
+        <span style="width:5px; height:5px; border-radius:999px; background:#5B8CFF;"></span>
+        <span class="mono" style="font-size:9.5px; font-weight:500; letter-spacing:0.13em; text-transform:uppercase; color:#8FB0FF;">Digital solutions for businesses</span>
+      </div>
+
+      <h1 style="font-size:44px; line-height:1.02; letter-spacing:-0.04em; color:#FFFFFF; text-wrap:balance;">Elevamos negocios con tecnolog&iacute;a.</h1>
+
+      <p style="font-size:16.5px; line-height:1.65; color:#A2AAB8; text-wrap:pretty;">Dise&ntilde;amos y desarrollamos soluciones digitales que ayudan a los negocios a verse mejor, conectar con sus clientes y crecer.</p>
+
+      <div style="display:flex; flex-direction:column; gap:12px; margin-top:2px;">
+        <button type="button" class="btn btn-primary">Hablemos de tu proyecto
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+        <button type="button" class="btn btn-ghost">Ver nuestro trabajo</button>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:9px;">
+        <span style="width:6px; height:6px; border-radius:999px; background:#24C08A; flex-shrink:0;"></span>
+        <span style="font-size:13.5px; line-height:1.5; color:#A2AAB8;">Tomando los primeros proyectos con condiciones de lanzamiento.</span>
+      </div>
+
+      <div style="display:flex; flex-wrap:wrap; gap:8px; padding-top:18px; border-top:1px solid #1B1F28; margin-top:4px;">
+        <span style="font-size:12px; color:#767E8D; background:#0F1218; border:1px solid #1B1F28; padding:7px 12px; border-radius:999px;">Entrega en 5&ndash;12 d&iacute;as</span>
+        <span style="font-size:12px; color:#767E8D; background:#0F1218; border:1px solid #1B1F28; padding:7px 12px; border-radius:999px;">Dominio y hosting incluidos</span>
+        <span style="font-size:12px; color:#767E8D; background:#0F1218; border:1px solid #1B1F28; padding:7px 12px; border-radius:999px;">Hablas con quien programa</span>
+      </div>
+
+      <!-- Maqueta de entregable -->
+      <div style="margin-top:18px; border-radius:12px; background:#0F1218; border:1px solid #232833; box-shadow:0 26px 60px -24px rgba(0,0,0,0.95); overflow:hidden;">
+        <div style="height:30px; background:#12151C; border-bottom:1px solid #232833; display:flex; align-items:center; gap:10px; padding:0 11px;">
+          <div style="display:flex; align-items:center; gap:5px;">
+            <span style="width:6px; height:6px; border-radius:999px; background:#2A303C;"></span>
+            <span style="width:6px; height:6px; border-radius:999px; background:#2A303C;"></span>
+            <span style="width:6px; height:6px; border-radius:999px; background:#2A303C;"></span>
+          </div>
+          <div style="flex-grow:1; display:flex; justify-content:center;">
+            <div style="display:flex; align-items:center; gap:6px; height:18px; padding:0 11px; border-radius:5px; background:#0B0D12; border:1px solid #1B1F28;">
+              <svg viewBox="0 0 24 24" width="8" height="8" fill="none" stroke="#5B8CFF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+              <span class="mono" style="font-size:8px; color:#767E8D;">[ tunegocio.com ]</span>
+            </div>
+          </div>
+          <div style="width:26px;"></div>
+        </div>
+
+        <div style="background:#0B0D12; padding-bottom:14px;">
+          <div style="height:28px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; border-bottom:1px solid #14181F;">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span style="width:11px; height:11px; border-radius:3px; background:#2E6BFF;"></span>
+              <span class="mono" style="font-size:7px; letter-spacing:0.16em; color:#EDEFF3;">[ TU NEGOCIO ]</span>
+            </div>
+            <span style="font-size:7px; font-weight:600; color:#FFFFFF; background:#2558E6; padding:4px 8px; border-radius:4px;">Reservar</span>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 116px; gap:12px; padding:16px 14px 12px;">
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <span class="mono" style="font-size:6.5px; letter-spacing:0.2em; text-transform:uppercase; color:#767E8D;">[ Sector ]</span>
+              <div style="font-family:'Sora',sans-serif; font-size:16px; font-weight:600; line-height:1.06; letter-spacing:-0.035em; color:#FFFFFF;">Reserva tu cita en 30 segundos.</div>
+              <span style="font-size:8px; line-height:1.55; color:#A2AAB8;">Sin llamadas ni esperas.</span>
+              <span style="font-size:8px; font-weight:600; color:#FFFFFF; background:#2558E6; padding:7px 11px; border-radius:5px; align-self:flex-start; margin-top:3px;">Reservar ahora</span>
+            </div>
+            <div class="grid-bg" style="height:104px; border-radius:8px; background-color:#12151C; border:1px solid #232833; position:relative; overflow:hidden;">
+              <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 25%, rgba(46,107,255,0.16) 0%, rgba(11,13,18,0) 62%);"></div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:8px; padding:0 14px;">
+            <div style="border:1px solid #1B1F28; border-radius:7px; background:#0F1218; padding:9px 9px; display:flex; flex-direction:column; gap:5px;">
+              <span style="width:14px; height:14px; border-radius:4px; background:rgba(46,107,255,0.12); border:1px solid rgba(46,107,255,0.24);"></span>
+              <span style="font-family:'Sora',sans-serif; font-size:8px; font-weight:600; color:#FFFFFF;">[ Servicio ]</span>
+            </div>
+            <div style="border:1px solid #1B1F28; border-radius:7px; background:#0F1218; padding:9px 9px; display:flex; flex-direction:column; gap:5px;">
+              <span style="width:14px; height:14px; border-radius:4px; background:rgba(46,107,255,0.12); border:1px solid rgba(46,107,255,0.24);"></span>
+              <span style="font-family:'Sora',sans-serif; font-size:8px; font-weight:600; color:#FFFFFF;">[ Servicio ]</span>
+            </div>
+            <div style="border:1px solid #1B1F28; border-radius:7px; background:#0F1218; padding:9px 9px; display:flex; flex-direction:column; gap:5px;">
+              <span style="width:14px; height:14px; border-radius:4px; background:rgba(46,107,255,0.12); border:1px solid rgba(46,107,255,0.24);"></span>
+              <span style="font-family:'Sora',sans-serif; font-size:8px; font-weight:600; color:#FFFFFF;">[ Servicio ]</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ PROBLEMA ============ -->
+  <div class="wrap" style="padding-top:72px; padding-bottom:72px; border-top:1px solid #1B1F28;">
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div class="eyebrow">El problema</div>
+      <h2 class="h2m">Tu negocio existe. En internet, casi no.</h2>
+      <p class="lead">Tus clientes te buscan en Google, te encuentran en Instagram y terminan preguntando el precio por WhatsApp. Si no hay nada s&oacute;lido detr&aacute;s, la venta se enfr&iacute;a.</p>
+    </div>
+
+    <div style="display:flex; flex-direction:column; margin-top:24px;">
+      <div style="display:flex; gap:16px; padding:22px 0; border-bottom:1px solid #1B1F28;">
+        <div style="width:40px; height:40px; flex-shrink:0; border-radius:11px; background:#12151C; border:1px solid #232833; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5B8CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:5px;">
+          <h3 style="font-size:17.5px; color:#FFFFFF;">No apareces en Google</h3>
+          <p style="font-size:14.5px; line-height:1.6; color:#A2AAB8;">Quien todav&iacute;a no te conoce, no te encuentra. Y llama al de al lado.</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; padding:22px 0; border-bottom:1px solid #1B1F28;">
+        <div style="width:40px; height:40px; flex-shrink:0; border-radius:11px; background:#12151C; border:1px solid #232833; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5B8CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:5px;">
+          <h3 style="font-size:17.5px; color:#FFFFFF;">Tu Instagram no cierra ventas</h3>
+          <p style="font-size:14.5px; line-height:1.6; color:#A2AAB8;">Un feed no explica precios, servicios ni condiciones.</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; padding:22px 0; border-bottom:1px solid #1B1F28;">
+        <div style="width:40px; height:40px; flex-shrink:0; border-radius:11px; background:#12151C; border:1px solid #232833; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5B8CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="14" rx="2"></rect><path d="M3 9h18M8 21h8"></path></svg>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:5px;">
+          <h3 style="font-size:17.5px; color:#FFFFFF;">Tu web se ve de hace diez a&ntilde;os</h3>
+          <p style="font-size:14.5px; line-height:1.6; color:#A2AAB8;">Lenta, imposible desde el celular y sin certificado de seguridad.</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:16px; padding:22px 0;">
+        <div style="width:40px; height:40px; flex-shrink:0; border-radius:11px; background:#12151C; border:1px solid #232833; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#5B8CFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5a8.4 8.4 0 0 1-.9-3.8 8.4 8.4 0 0 1 8.4-9 8.4 8.4 0 0 1 8.6 8.3Z"></path></svg>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:5px;">
+          <h3 style="font-size:17.5px; color:#FFFFFF;">Todo pasa por ti</h3>
+          <p style="font-size:14.5px; line-height:1.6; color:#A2AAB8;">Respondes las mismas cinco preguntas diez veces al d&iacute;a.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px; padding:18px 20px; border-left:2px solid #2E6BFF; background:linear-gradient(90deg, rgba(46,107,255,0.09) 0%, rgba(46,107,255,0) 100%);">
+      <p style="font-size:15.5px; line-height:1.6; color:#EDEFF3;">ELEVA construye la base digital que tu negocio ya deber&iacute;a tener.</p>
+    </div>
+  </div>
+
+  <!-- ============ SERVICIOS ============ -->
+  <div style="background:#0E1116; padding:88px 0; border-top:1px solid #1B1F28;">
+    <div class="wrap" style="display:flex; flex-direction:column; gap:14px; margin-bottom:28px;">
+      <div class="eyebrow">Servicios</div>
+      <h2 class="h2m">Tres formas de empezar.</h2>
+      <p class="lead">Todos incluyen dominio y hosting del primer a&ntilde;o, SSL y publicaci&oacute;n. Precios de partida.</p>
+    </div>
+
+    <div class="wrap" style="display:flex; flex-direction:column; gap:14px;">
+
+      <div class="card" style="padding:24px 22px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px;">
+          <div style="display:flex; flex-direction:column; gap:5px;">
+            <div class="eyebrow">ELEVA Start</div>
+            <h3 style="font-size:19px; color:#FFFFFF;">Landing page profesional</h3>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:3px; flex-shrink:0;">
+            <span style="font-family:'Sora',sans-serif; font-size:22px; font-weight:600; letter-spacing:-0.035em; color:#FFFFFF; white-space:nowrap;">$890.000</span>
+            <span class="mono" style="font-size:9.5px; color:#767E8D;">COP</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px; padding-top:14px; border-top:1px solid #1B1F28;">
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2E6BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">Una p&aacute;gina con todas las secciones</span></div>
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2E6BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">WhatsApp, Maps, redes y formulario</span></div>
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2E6BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">SEO b&aacute;sico, dominio y hosting el primer a&ntilde;o</span></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:7px; flex-wrap:wrap;">
+          <span class="mono" style="font-size:10px; color:#A2AAB8; background:#1A1E27; border:1px solid #232833; padding:5px 10px; border-radius:999px;">2 rondas</span>
+          <span class="mono" style="font-size:10px; color:#A2AAB8; background:#1A1E27; border:1px solid #232833; padding:5px 10px; border-radius:999px;">5&ndash;7 d&iacute;as</span>
+        </div>
+        <span class="mono" style="font-size:10px; letter-spacing:0.04em; color:#767E8D;">60% para iniciar &middot; 40% antes de publicar</span>
+        <button type="button" class="btn btn-ghost" style="height:48px; font-size:14.5px;">Empezar con START</button>
+      </div>
+
+      <div style="background:#12151C; border:1px solid rgba(46,107,255,0.5); border-radius:16px; padding:26px 22px; display:flex; flex-direction:column; gap:16px; box-shadow:0 26px 56px -26px rgba(46,107,255,0.7);">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px;">
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <span style="font-size:9.5px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#FFFFFF; background:#2558E6; padding:5px 10px; border-radius:999px; align-self:flex-start;">M&aacute;s elegido</span>
+            <div class="eyebrow" style="color:#8FB0FF;">ELEVA Business</div>
+            <h3 style="font-size:19px; color:#FFFFFF;">El sitio completo del negocio</h3>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:3px; flex-shrink:0;">
+            <span style="font-family:'Sora',sans-serif; font-size:22px; font-weight:600; letter-spacing:-0.035em; color:#FFFFFF; white-space:nowrap;">$1.890.000</span>
+            <span class="mono" style="font-size:9.5px; color:#767E8D;">COP</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px; padding-top:14px; border-top:1px solid #1B1F28;">
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#5B8CFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">Todo lo de START</span></div>
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#5B8CFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">Hasta 5 p&aacute;ginas y cat&aacute;logo b&aacute;sico</span></div>
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#5B8CFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">SEO on-page y Google Analytics</span></div>
+        </div>
+        <div style="display:flex; align-items:center; gap:7px; flex-wrap:wrap;">
+          <span class="mono" style="font-size:10px; color:#8FB0FF; background:rgba(46,107,255,0.1); border:1px solid rgba(46,107,255,0.26); padding:5px 10px; border-radius:999px;">3 rondas</span>
+          <span class="mono" style="font-size:10px; color:#8FB0FF; background:rgba(46,107,255,0.1); border:1px solid rgba(46,107,255,0.26); padding:5px 10px; border-radius:999px;">7&ndash;12 d&iacute;as</span>
+        </div>
+        <span class="mono" style="font-size:10px; letter-spacing:0.04em; color:#8FB0FF;">60% para iniciar &middot; 40% antes de publicar</span>
+        <button type="button" class="btn btn-primary" style="height:48px; font-size:14.5px;">Empezar con BUSINESS</button>
+      </div>
+
+      <div class="card" style="padding:24px 22px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:14px;">
+          <div style="display:flex; flex-direction:column; gap:5px;">
+            <div class="eyebrow">ELEVA Pro</div>
+            <h3 style="font-size:19px; color:#FFFFFF;">Soluciones a medida</h3>
+          </div>
+          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:3px; flex-shrink:0;">
+            <span class="mono" style="font-size:9.5px; color:#767E8D;">DESDE</span>
+            <span style="font-family:'Sora',sans-serif; font-size:22px; font-weight:600; letter-spacing:-0.035em; color:#FFFFFF; white-space:nowrap;">$3.490.000</span>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:9px; padding-top:14px; border-top:1px solid #1B1F28;">
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2E6BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M20 6 9 17l-5-5"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">Todo lo de BUSINESS</span></div>
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2E6BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">Filtros, reservas e integraciones</span></div>
+          <div style="display:flex; gap:9px;"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#2E6BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:4px;" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14"></path></svg><span style="font-size:13.5px; line-height:1.5; color:#EDEFF3;">Panel administrativo cuando aplica</span></div>
+        </div>
+        <div style="padding:12px 14px; border-radius:9px; background:#0E1116; border:1px solid #1B1F28;">
+          <p style="font-size:12px; line-height:1.6; color:#767E8D;">E-commerce completo, pasarelas de pago, apps, SaaS y sistemas administrativos se cotizan aparte.</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:7px;">
+          <span class="mono" style="font-size:10px; color:#A2AAB8; background:#1A1E27; border:1px solid #232833; padding:5px 10px; border-radius:999px;">15&ndash;25 d&iacute;as</span>
+        </div>
+        <span class="mono" style="font-size:10px; letter-spacing:0.04em; color:#767E8D;">60% para iniciar &middot; 40% antes de publicar</span>
+        <button type="button" class="btn btn-ghost" style="height:48px; font-size:14.5px;">Cotizar un PRO</button>
+      </div>
+
+    </div>
+
+    <div class="wrap" style="margin-top:44px; padding-top:36px; border-top:1px solid #232833;">
+      <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px;">
+        <div class="eyebrow">ELEVA Care &mdash; mantenimiento mensual</div>
+        <h3 style="font-size:22px; color:#FFFFFF; letter-spacing:-0.03em;">Un sitio publicado no es un sitio terminado.</h3>
+      </div>
+      <div style="border:1px solid #232833; border-radius:14px; overflow:hidden; background:#12151C;">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:18px 20px; border-bottom:1px solid #1B1F28;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <span style="font-family:'Sora',sans-serif; font-size:15.5px; font-weight:600; color:#FFFFFF;">Essential</span>
+            <span style="font-size:12.5px; line-height:1.5; color:#A2AAB8;">Hosting, SSL, backups y 30 min de cambios</span>
+          </div>
+          <span style="font-family:'Sora',sans-serif; font-size:16px; font-weight:600; color:#FFFFFF; white-space:nowrap;">$99.000</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:18px 20px; border-bottom:1px solid #1B1F28;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <span style="font-family:'Sora',sans-serif; font-size:15.5px; font-weight:600; color:#FFFFFF;">Business</span>
+            <span style="font-size:12.5px; line-height:1.5; color:#A2AAB8;">1 hora de cambios y revisi&oacute;n mensual</span>
+          </div>
+          <span style="font-family:'Sora',sans-serif; font-size:16px; font-weight:600; color:#FFFFFF; white-space:nowrap;">$199.000</span>
+        </div>
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:14px; padding:18px 20px;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <span style="font-family:'Sora',sans-serif; font-size:15.5px; font-weight:600; color:#FFFFFF;">Growth</span>
+            <span style="font-size:12.5px; line-height:1.5; color:#A2AAB8;">2 horas, SEO local y reporte mensual</span>
+          </div>
+          <span style="font-family:'Sora',sans-serif; font-size:16px; font-weight:600; color:#FFFFFF; white-space:nowrap;">$399.000</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ PROCESO ============ -->
+  <div style="background:#F7F8FA; padding:64px 0;">
+    <div class="wrap" style="display:flex; flex-direction:column; gap:12px; margin-bottom:28px;">
+      <div class="eyebrow" style="color:#5A6373;">Proceso</div>
+      <h2 class="h2m" style="color:#0B0D12;">C&oacute;mo trabajamos.</h2>
+    </div>
+    <div class="wrap" style="display:flex; flex-direction:column; gap:20px;">
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="height:2px; background:#DDE2EA; position:relative;"><div style="position:absolute; left:0; top:0; bottom:0; width:20%; background:#2E6BFF;"></div></div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span class="mono" style="font-size:11.5px; font-weight:500; color:#2E6BFF; width:20px; flex-shrink:0;">01</span>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <h3 style="font-size:17.5px; color:#0B0D12;">Descubrimos</h3>
+            <p style="font-size:14px; line-height:1.65; color:#5A6373;">Entendemos el negocio y qu&eacute; debe lograr la web.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="height:2px; background:#DDE2EA; position:relative;"><div style="position:absolute; left:0; top:0; bottom:0; width:40%; background:#2E6BFF;"></div></div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span class="mono" style="font-size:11.5px; font-weight:500; color:#5A6373; width:20px; flex-shrink:0;">02</span>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <h3 style="font-size:17.5px; color:#0B0D12;">Dise&ntilde;amos</h3>
+            <p style="font-size:14px; line-height:1.65; color:#5A6373;">Convertimos la idea en un dise&ntilde;o que apruebas antes de programar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="height:2px; background:#DDE2EA; position:relative;"><div style="position:absolute; left:0; top:0; bottom:0; width:60%; background:#2E6BFF;"></div></div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span class="mono" style="font-size:11.5px; font-weight:500; color:#5A6373; width:20px; flex-shrink:0;">03</span>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <h3 style="font-size:17.5px; color:#0B0D12;">Desarrollamos</h3>
+            <p style="font-size:14px; line-height:1.65; color:#5A6373;">Construimos con Next.js sobre componentes ya probados.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="height:2px; background:#DDE2EA; position:relative;"><div style="position:absolute; left:0; top:0; bottom:0; width:80%; background:#2E6BFF;"></div></div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span class="mono" style="font-size:11.5px; font-weight:500; color:#5A6373; width:20px; flex-shrink:0;">04</span>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <h3 style="font-size:17.5px; color:#0B0D12;">Lanzamos</h3>
+            <p style="font-size:14px; line-height:1.65; color:#5A6373;">Probamos, optimizamos la velocidad y publicamos.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="height:2px; background:#2E6BFF;"></div>
+        <div style="display:flex; gap:14px; align-items:baseline;">
+          <span class="mono" style="font-size:11.5px; font-weight:500; color:#5A6373; width:20px; flex-shrink:0;">05</span>
+          <div style="display:flex; flex-direction:column; gap:4px;">
+            <h3 style="font-size:17.5px; color:#0B0D12;">Elevamos</h3>
+            <p style="font-size:14px; line-height:1.65; color:#5A6373;">Medimos, ajustamos y seguimos mejorando.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ PROYECTOS ============ -->
+  <div class="wrap" style="padding:72px 0;">
+    <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:24px;">
+      <div class="eyebrow">Proyectos</div>
+      <h2 class="h2m">Lo que estamos construyendo.</h2>
+      <p class="lead">ELEVA acaba de arrancar y lo estamos contando en p&uacute;blico. Este espacio se llena con los primeros proyectos publicados.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="card" style="overflow:hidden;">
+        <div class="grid-bg" style="height:200px; background-color:#0F1218; border-bottom:1px solid #232833; display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="position:absolute; inset:0; background:radial-gradient(ellipse at 50% 45%, rgba(46,107,255,0.1) 0%, rgba(11,13,18,0) 62%);"></div>
+          <span class="mono" style="position:relative; font-size:11px; letter-spacing:0.16em; color:#767E8D;">[ PRIMER PROYECTO ]</span>
+        </div>
+        <div style="padding:20px 22px; display:flex; align-items:flex-end; justify-content:space-between; gap:14px;">
+          <div style="display:flex; flex-direction:column; gap:6px;">
+            <span class="eyebrow">[ Sector ] &middot; [ A&ntilde;o ]</span>
+            <h3 style="font-size:18px; color:#FFFFFF;">[ Nombre del cliente ]</h3>
+          </div>
+          <span class="mono" style="font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#767E8D; white-space:nowrap;">En proceso</span>
+        </div>
+      </div>
+      <div style="border:1px dashed #2A303C; border-radius:16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:34px 26px; text-align:center;">
+        <div style="width:44px; height:44px; border-radius:13px; background:rgba(46,107,255,0.1); border:1px solid rgba(46,107,255,0.26); display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="#5B8CFF" stroke-width="1.8" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M12 5v14M5 12h14"></path></svg>
+        </div>
+        <h3 style="font-size:19px; color:#FFFFFF; text-wrap:balance;">&iquest;Y si el pr&oacute;ximo es el tuyo?</h3>
+        <p style="font-size:14.5px; line-height:1.6; color:#A2AAB8;">Estamos tomando los primeros proyectos con condiciones de lanzamiento.</p>
+        <a href="#" class="textlink">Hablemos
+          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOUNDER ============ -->
+  <div style="background:#0E1116; padding:88px 0; border-top:1px solid #1B1F28;">
+    <div class="wrap" style="display:flex; flex-direction:column; gap:24px;">
+      <div class="grid-bg" style="height:428px; border-radius:18px; background-color:#12151C; border:1px solid #232833; display:flex; align-items:flex-end; justify-content:center; padding:22px; position:relative; overflow:hidden;">
+        <div style="position:absolute; inset:0; background:radial-gradient(circle at 70% 20%, rgba(46,107,255,0.14) 0%, rgba(11,13,18,0) 60%);"></div>
+        <span class="mono" style="position:relative; font-size:11px; letter-spacing:0.14em; color:#767E8D;">[ FOTO DE BRANDON &mdash; 4:5 ]</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:18px;">
+        <div class="eyebrow">Founder</div>
+        <h2 class="h2m">Detr&aacute;s de ELEVA hay una persona que responde.</h2>
+        <p style="font-size:16px; line-height:1.75; color:#A2AAB8; text-wrap:pretty;">Soy Brandon Vides. Fund&eacute; ELEVA porque veo todos los d&iacute;as negocios buenos compitiendo con una presencia digital que no los representa.</p>
+        <p style="font-size:16px; line-height:1.75; color:#A2AAB8; text-wrap:pretty;">ELEVA existe para cerrar esa distancia. Hablas directamente con quien dise&ntilde;a y programa tu proyecto.</p>
+
+        <div style="display:flex; flex-direction:column; gap:18px; padding-top:20px; border-top:1px solid #232833;">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
+            <div style="display:flex; flex-direction:column; gap:3px;">
+              <span style="font-family:'Sora',sans-serif; font-size:16px; font-weight:600; color:#FFFFFF;">Brandon Vides</span>
+              <span class="mono" style="font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#767E8D;">Founder &amp; Developer</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:9px;">
+              <a href="#" style="width:44px; height:44px; border-radius:10px; background:#12151C; border:1px solid #232833; display:flex; align-items:center; justify-content:center;">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#A2AAB8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg>
+              </a>
+              <a href="#" style="width:44px; height:44px; border-radius:10px; background:#12151C; border:1px solid #232833; display:flex; align-items:center; justify-content:center;">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#A2AAB8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 9h3v11H4zM5.5 4.5a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4Z"></path><path d="M11 20V9h3v1.6a3.6 3.6 0 0 1 3.2-1.8c2.4 0 3.8 1.6 3.8 4.4V20h-3v-6.2c0-1.5-.6-2.4-1.9-2.4-1.1 0-1.8.7-2.1 1.5V20Z"></path></svg>
+              </a>
+            </div>
+          </div>
+          <button type="button" class="btn btn-ghost" style="height:48px; font-size:14.5px;">Escr&iacute;beme directo
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5a8.4 8.4 0 0 1-.9-3.8 8.4 8.4 0 0 1 8.4-9 8.4 8.4 0 0 1 8.6 8.3Z"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ CTA ============ -->
+  <div class="wrap" style="padding:88px 0;">
+    <div style="position:relative; border:1px solid #232833; border-radius:20px; background:#0E1116; overflow:hidden; padding:44px 24px;">
+      <div class="grid-bg" style="position:absolute; inset:0; opacity:0.6;"></div>
+      <div class="pulse" style="position:absolute; left:50%; top:50%; width:520px; height:460px; transform:translate(-50%,-50%); background:radial-gradient(ellipse at 50% 50%, rgba(46,107,255,0.26) 0%, rgba(46,107,255,0.05) 45%, rgba(14,17,22,0) 70%);"></div>
+
+      <div style="position:relative; display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px;">
+        <svg viewBox="0 0 32 32" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+          <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+        </svg>
+        <h2 style="font-size:34px; line-height:1.06; letter-spacing:-0.04em; color:#FFFFFF; text-wrap:balance;">&iquest;Hablamos de tu proyecto?</h2>
+        <p style="font-size:16px; line-height:1.7; color:#A2AAB8; text-wrap:pretty;">Cu&eacute;ntanos qu&eacute; hace tu negocio y te decimos qu&eacute; necesitas, cu&aacute;nto cuesta y en cu&aacute;nto tiempo lo tienes.</p>
+        <button type="button" class="btn btn-primary" style="width:100%; margin-top:6px;">Escribir por WhatsApp
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </button>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <span style="font-size:14px; color:#A2AAB8;">o escr&iacute;benos a</span>
+          <a href="#" class="textlink">[ hola@tudominio.com ]</a>
+        </div>
+        <p class="mono" style="font-size:10.5px; letter-spacing:0.12em; text-transform:uppercase; color:#767E8D; margin-top:4px;">Respondemos el mismo d&iacute;a h&aacute;bil</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div style="background:#06070A; border-top:1px solid #1B1F28; padding:56px 0 28px;">
+    <div class="wrap" style="display:flex; flex-direction:column; gap:32px;">
+
+      <div style="display:flex; flex-direction:column; gap:16px; padding-bottom:32px; border-bottom:1px solid #141822;">
+        <h3 style="font-size:20px; color:#FFFFFF; letter-spacing:-0.03em;">&iquest;Listo para elevar tu negocio?</h3>
+        <button type="button" class="btn btn-ghost" style="height:48px; font-size:14.5px;">Escribir por WhatsApp
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5a8.4 8.4 0 0 1-.9-3.8 8.4 8.4 0 0 1 8.4-9 8.4 8.4 0 0 1 8.6 8.3Z"></path></svg>
+        </button>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg viewBox="0 0 32 32" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+          </svg>
+          <span style="font-family:'Sora',sans-serif; font-weight:600; font-size:16px; letter-spacing:0.17em; color:#FFFFFF;">ELEVA</span>
+        </div>
+        <p style="font-size:14px; line-height:1.7; color:#767E8D;">Soluciones digitales para negocios que quieren crecer. Dise&ntilde;o, desarrollo y tecnolog&iacute;a desde Colombia.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:28px;">
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="eyebrow" style="margin-bottom:2px;">Servicios</div>
+          <a href="#" style="font-size:14px; color:#A2AAB8;">ELEVA START</a>
+          <a href="#" style="font-size:14px; color:#A2AAB8;">ELEVA BUSINESS</a>
+          <a href="#" style="font-size:14px; color:#A2AAB8;">ELEVA PRO</a>
+          <a href="#" style="font-size:14px; color:#A2AAB8;">ELEVA CARE</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div class="eyebrow" style="margin-bottom:2px;">Contacto</div>
+          <a href="#" style="font-size:14px; color:#A2AAB8;">[ +57 300 000 0000 ]</a>
+          <a href="#" style="font-size:14px; color:#A2AAB8;">[ hola@tudominio.com ]</a>
+          <span style="font-size:14px; color:#767E8D;">[ Ciudad ], Colombia</span>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; gap:10px;">
+        <a href="#" style="width:44px; height:44px; border-radius:10px; background:#0E1116; border:1px solid #1B1F28; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#767E8D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><path d="M17.5 6.5h.01"></path></svg>
+        </a>
+        <a href="#" style="width:44px; height:44px; border-radius:10px; background:#0E1116; border:1px solid #1B1F28; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#767E8D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M4 9h3v11H4zM5.5 4.5a1.7 1.7 0 1 0 0 3.4 1.7 1.7 0 0 0 0-3.4Z"></path><path d="M11 20V9h3v1.6a3.6 3.6 0 0 1 3.2-1.8c2.4 0 3.8 1.6 3.8 4.4V20h-3v-6.2c0-1.5-.6-2.4-1.9-2.4-1.1 0-1.8.7-2.1 1.5V20Z"></path></svg>
+        </a>
+        <a href="#" style="width:44px; height:44px; border-radius:10px; background:#0E1116; border:1px solid #1B1F28; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#767E8D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5a8.4 8.4 0 0 1-.9-3.8 8.4 8.4 0 0 1 8.4-9 8.4 8.4 0 0 1 8.6 8.3Z"></path></svg>
+        </a>
+      </div>
+
+      <div style="padding-top:22px; border-top:1px solid #141822; display:flex; flex-direction:column; gap:12px;">
+        <span class="mono" style="font-size:10.5px; letter-spacing:0.08em; color:#767E8D;">&copy; 2026 ELEVA &middot; Digital solutions for businesses</span>
+        <div style="display:flex; align-items:center; gap:20px;">
+          <a href="#" class="mono" style="font-size:10.5px; letter-spacing:0.08em; color:#767E8D;">Pol&iacute;tica de privacidad</a>
+          <a href="#" class="mono" style="font-size:10.5px; letter-spacing:0.08em; color:#767E8D;">T&eacute;rminos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BARRA FIJA INFERIOR (aparece al salir el hero, se oculta al llegar al CTA) -->
+  <div style="position:absolute; left:16px; right:16px; top:1010px; height:64px; border-radius:14px; background:rgba(18,21,28,0.95); border:1px solid #2A303C; box-shadow:0 18px 44px -16px rgba(0,0,0,0.95); display:flex; align-items:center; justify-content:space-between; padding:0 10px 0 18px;">
+    <div style="display:flex; flex-direction:column; gap:2px;">
+      <span style="font-size:13.5px; font-weight:600; color:#FFFFFF;">&iquest;Tienes un negocio?</span>
+      <span class="mono" style="font-size:9.5px; letter-spacing:0.1em; text-transform:uppercase; color:#767E8D;">Cotiza en 2 minutos</span>
+    </div>
+    <button type="button" class="btn btn-primary" style="height:48px; padding:0 18px; font-size:14px;">WhatsApp</button>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

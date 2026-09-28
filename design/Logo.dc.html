@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; background:#0B0D12; color:#EDEFF3; font-family:'Manrope','Segoe UI',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3,h4 { font-family:'Sora','Segoe UI',system-ui,sans-serif; font-weight:600; margin:0; letter-spacing:-0.025em; }
+    p { margin:0; }
+    a { color:#5B8CFF; text-decoration:none; }
+    a:hover { color:#8FB0FF; }
+    .eyebrow { font-family:'JetBrains Mono',ui-monospace,Consolas,monospace; font-size:11px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#767E8D; }
+    .panel { background:#12151C; border:1px solid #232833; border-radius:16px; }
+    .grid-bg { background-image:linear-gradient(to right,#191D26 1px,transparent 1px),linear-gradient(to bottom,#191D26 1px,transparent 1px); background-size:32px 32px; }
+    .wm { font-family:'Sora','Segoe UI',system-ui,sans-serif; font-weight:600; letter-spacing:0.17em; }
+  </style>
+</helmet>
+
+<div style="width:1240px; padding:64px; background:#0B0D12; font-family:'Manrope','Segoe UI',system-ui,sans-serif;">
+
+  <div style="display:flex; flex-direction:column; gap:14px; padding-bottom:36px; border-bottom:1px solid #232833;">
+    <div class="eyebrow">ELEVA &middot; Design System &middot; 01</div>
+    <h1 style="font-size:44px; line-height:1.05; color:#FFFFFF;">Logo &amp; marca</h1>
+    <p style="font-size:17px; line-height:1.65; color:#A2AAB8; max-width:660px; text-wrap:pretty;">La &ldquo;E&rdquo; ascendente: un asta vertical y tres barras que crecen hacia arriba. Lee como E, como progreso y como ascenso &mdash; sin recurrir a s&iacute;mbolos gen&eacute;ricos de c&oacute;digo, engranajes o bombillos.</p>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:24px; margin-top:40px;">
+
+    <div class="panel" style="overflow:hidden;">
+      <div class="grid-bg" style="height:300px; display:flex; align-items:center; justify-content:center;">
+        <svg viewBox="0 0 32 32" width="150" height="150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+          <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+        </svg>
+      </div>
+      <div style="padding:20px 24px; border-top:1px solid #232833; display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:14px; font-weight:600; color:#EDEFF3;">S&iacute;mbolo primario</span>
+        <span class="eyebrow">isotipo</span>
+      </div>
+    </div>
+
+    <div class="panel" style="overflow:hidden;">
+      <div class="grid-bg" style="height:300px; display:flex; align-items:center; justify-content:center; gap:20px;">
+        <svg viewBox="0 0 32 32" width="52" height="52" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+          <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+        </svg>
+        <span class="wm" style="font-size:34px; color:#FFFFFF;">ELEVA</span>
+      </div>
+      <div style="padding:20px 24px; border-top:1px solid #232833; display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:14px; font-weight:600; color:#EDEFF3;">Lockup horizontal</span>
+        <span class="eyebrow">uso principal</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:24px; margin-top:24px;">
+
+    <div class="panel" style="overflow:hidden;">
+      <div style="height:240px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+        <svg viewBox="0 0 32 32" width="60" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+          <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+          <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+        </svg>
+        <span class="wm" style="font-size:22px; color:#FFFFFF;">ELEVA</span>
+      </div>
+      <div style="padding:18px 22px; border-top:1px solid #232833; font-size:13px; font-weight:600; color:#EDEFF3;">Lockup vertical</div>
+    </div>
+
+    <div class="panel" style="overflow:hidden;">
+      <div style="height:240px; display:flex; align-items:center; justify-content:center; gap:20px;">
+        <div style="width:88px; height:88px; border-radius:22px; background:linear-gradient(160deg,#171B24 0%,#0B0D12 100%); border:1px solid #2A303C; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 32 32" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+          </svg>
+        </div>
+        <div style="width:56px; height:56px; border-radius:14px; background:#2E6BFF; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#FFFFFF"></path>
+          </svg>
+        </div>
+      </div>
+      <div style="padding:18px 22px; border-top:1px solid #232833; font-size:13px; font-weight:600; color:#EDEFF3;">Icono de app / avatar</div>
+    </div>
+
+    <div class="panel" style="overflow:hidden;">
+      <div style="height:240px; background:#F7F8FA; display:flex; align-items:center; justify-content:center; gap:16px;">
+        <svg viewBox="0 0 32 32" width="46" height="46" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#0B0D12"></rect>
+          <path d="M8.6 22H21.6L18 27H8.6Z" fill="#0B0D12"></path>
+          <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#0B0D12"></path>
+          <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+        </svg>
+        <span class="wm" style="font-size:28px; color:#0B0D12;">ELEVA</span>
+      </div>
+      <div style="padding:18px 22px; border-top:1px solid #232833; font-size:13px; font-weight:600; color:#EDEFF3;">Sobre fondo claro</div>
+    </div>
+
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:24px; margin-top:24px;">
+
+    <div class="panel" style="padding:28px 32px;">
+      <div class="eyebrow" style="margin-bottom:16px;">Espacio libre m&iacute;nimo</div>
+      <div style="display:flex; align-items:center; justify-content:center; padding:22px;">
+        <div style="border:1px dashed #2E6BFF; padding:26px; display:flex; align-items:center; gap:16px;">
+          <svg viewBox="0 0 32 32" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+          </svg>
+          <span class="wm" style="font-size:28px; color:#FFFFFF;">ELEVA</span>
+        </div>
+      </div>
+      <p style="font-size:14px; line-height:1.65; color:#A2AAB8; text-align:center; text-wrap:pretty;">Margen libre en los cuatro lados = <span style="color:#EDEFF3; font-weight:600;">la altura de una barra</span> del s&iacute;mbolo. Nada invade esa zona.</p>
+    </div>
+
+    <div class="panel" style="padding:28px 32px;">
+      <div class="eyebrow" style="margin-bottom:16px;">Tama&ntilde;os m&iacute;nimos</div>
+      <div style="display:flex; align-items:flex-end; justify-content:center; gap:48px; padding:26px 0 30px;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <svg viewBox="0 0 32 32" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+          </svg>
+          <span class="eyebrow">20px favicon</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <svg viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+          </svg>
+          <span class="eyebrow">32px s&iacute;mbolo</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:12px;">
+          <div style="display:flex; align-items:center; gap:9px;">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+              <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+              <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+              <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+            </svg>
+            <span class="wm" style="font-size:17px; color:#FFFFFF;">ELEVA</span>
+          </div>
+          <span class="eyebrow">120px lockup</span>
+        </div>
+      </div>
+      <p style="font-size:14px; line-height:1.65; color:#A2AAB8; text-align:center; text-wrap:pretty;">Por debajo del m&iacute;nimo se usa solo el s&iacute;mbolo, nunca el lockup completo.</p>
+    </div>
+
+  </div>
+
+  <div style="margin-top:40px;">
+    <div class="eyebrow" style="margin-bottom:18px;">Usos incorrectos</div>
+    <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:24px;">
+
+      <div class="panel" style="overflow:hidden;">
+        <div style="height:132px; display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 32 32" width="96" height="44" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#8A93A3"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#8A93A3"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#8A93A3"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#8A93A3"></path>
+          </svg>
+        </div>
+        <div style="padding:14px 18px; border-top:1px solid #232833; display:flex; align-items:center; gap:9px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          <span style="font-size:13px; color:#A2AAB8;">Deformar</span>
+        </div>
+      </div>
+
+      <div class="panel" style="overflow:hidden;">
+        <div style="height:132px; display:flex; align-items:center; justify-content:center;">
+          <div style="transform:rotate(-18deg);">
+            <svg viewBox="0 0 32 32" width="54" height="54" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#8A93A3"></rect>
+              <path d="M8.6 22H21.6L18 27H8.6Z" fill="#8A93A3"></path>
+              <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#8A93A3"></path>
+              <path d="M8.6 5H28L24.4 10H8.6Z" fill="#8A93A3"></path>
+            </svg>
+          </div>
+        </div>
+        <div style="padding:14px 18px; border-top:1px solid #232833; display:flex; align-items:center; gap:9px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          <span style="font-size:13px; color:#A2AAB8;">Rotar</span>
+        </div>
+      </div>
+
+      <div class="panel" style="overflow:hidden;">
+        <div style="height:132px; background:linear-gradient(135deg,#7B2FF7 0%,#F107A3 100%); display:flex; align-items:center; justify-content:center;">
+          <svg viewBox="0 0 32 32" width="54" height="54" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#FFFFFF"></path>
+          </svg>
+        </div>
+        <div style="padding:14px 18px; border-top:1px solid #232833; display:flex; align-items:center; gap:9px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          <span style="font-size:13px; color:#A2AAB8;">Fondos fuera de paleta</span>
+        </div>
+      </div>
+
+      <div class="panel" style="overflow:hidden;">
+        <div style="height:132px; display:flex; align-items:center; justify-content:center; gap:11px;">
+          <svg viewBox="0 0 32 32" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="5" width="4.6" height="22" rx="1" fill="#FFFFFF"></rect>
+            <path d="M8.6 22H21.6L18 27H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 13.5H24.8L21.2 18.5H8.6Z" fill="#FFFFFF"></path>
+            <path d="M8.6 5H28L24.4 10H8.6Z" fill="#2E6BFF"></path>
+          </svg>
+          <span style="font-family:'Manrope',sans-serif; font-size:26px; font-weight:400; letter-spacing:0; color:#FFFFFF;">Eleva</span>
+        </div>
+        <div style="padding:14px 18px; border-top:1px solid #232833; display:flex; align-items:center; gap:9px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="#E5484D" stroke-width="2" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+          <span style="font-size:13px; color:#A2AAB8;">Cambiar la tipograf&iacute;a</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:24px; padding:32px 36px; display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:36px;">
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="eyebrow">Construcci&oacute;n</div>
+      <h3 style="font-size:22px; color:#FFFFFF;">Grid de 32 &times; 32</h3>
+      <p style="font-size:14px; line-height:1.7; color:#A2AAB8; text-wrap:pretty;">Asta de 4,6u. Barras de 5u de alto separadas 3,5u. El corte diagonal del extremo derecho mide siempre 3,6u y es lo que da la sensaci&oacute;n de movimiento hacia arriba.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="eyebrow">Ascenso</div>
+      <h3 style="font-size:22px; color:#FFFFFF;">21,6 &rarr; 24,8 &rarr; 28</h3>
+      <p style="font-size:14px; line-height:1.7; color:#A2AAB8; text-wrap:pretty;">Las tres barras crecen de abajo hacia arriba. Solo la superior lleva azul el&eacute;ctrico: es el punto de llegada, el &ldquo;elevar&rdquo;.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="eyebrow">Regla</div>
+      <h3 style="font-size:22px; color:#FFFFFF;">Un solo acento</h3>
+      <p style="font-size:14px; line-height:1.7; color:#A2AAB8; text-wrap:pretty;">En versiones monocromas (grabado, una tinta, sobre fotograf&iacute;a) las cuatro piezas van en un mismo color. El azul nunca se reparte entre varias barras.</p>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

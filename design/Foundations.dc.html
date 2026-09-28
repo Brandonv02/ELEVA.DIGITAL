@@ -1,0 +1,363 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; background:#0B0D12; color:#EDEFF3; font-family:'Manrope','Segoe UI',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+    h1,h2,h3,h4 { font-family:'Sora','Segoe UI',system-ui,sans-serif; font-weight:600; margin:0; letter-spacing:-0.025em; }
+    p { margin:0; }
+    a { color:#5B8CFF; text-decoration:none; }
+    a:hover { color:#8FB0FF; }
+    .eyebrow { font-family:'JetBrains Mono',ui-monospace,Consolas,monospace; font-size:11px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#767E8D; }
+    .mono { font-family:'JetBrains Mono',ui-monospace,Consolas,monospace; }
+    .panel { background:#12151C; border:1px solid #232833; border-radius:16px; }
+    .sw { height:92px; border-radius:12px; border:1px solid rgba(255,255,255,0.07); }
+    .swname { font-size:13px; font-weight:600; color:#EDEFF3; margin-top:12px; }
+    .swhex { font-family:'JetBrains Mono',ui-monospace,Consolas,monospace; font-size:11.5px; color:#8A93A3; margin-top:3px; }
+    .swrole { font-size:12px; color:#767E8D; margin-top:5px; line-height:1.45; }
+    .row { display:flex; align-items:baseline; justify-content:space-between; gap:40px; padding:20px 0; border-bottom:1px solid #1B1F28; }
+    .spec { font-family:'JetBrains Mono',ui-monospace,Consolas,monospace; font-size:11.5px; color:#767E8D; white-space:nowrap; text-align:right; line-height:1.6; }
+  </style>
+</helmet>
+
+<div style="width:1240px; padding:64px; background:#0B0D12; font-family:'Manrope','Segoe UI',system-ui,sans-serif;">
+
+  <div style="display:flex; flex-direction:column; gap:14px; padding-bottom:36px; border-bottom:1px solid #232833;">
+    <div class="eyebrow">ELEVA &middot; Design System &middot; 02</div>
+    <h1 style="font-size:44px; line-height:1.05; color:#FFFFFF;">Fundamentos</h1>
+    <p style="font-size:17px; line-height:1.65; color:#A2AAB8; max-width:680px; text-wrap:pretty;">Carb&oacute;n fr&iacute;o como base, plata para la informaci&oacute;n secundaria y un &uacute;nico azul el&eacute;ctrico reservado para lo que debe accionarse. Todo valor de aqu&iacute; se traduce 1:1 a variables CSS y al theme de Tailwind.</p>
+  </div>
+
+  <!-- COLOR -->
+  <div style="margin-top:48px;">
+    <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:24px;">
+      <h2 style="font-size:26px; color:#FFFFFF;">Color</h2>
+      <span class="eyebrow">paleta</span>
+    </div>
+
+    <div class="eyebrow" style="margin-bottom:14px;">Neutros &mdash; superficies</div>
+    <div style="display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:20px;">
+      <div>
+        <div class="sw" style="background:#06070A;"></div>
+        <div class="swname">void</div><div class="swhex">#06070A</div><div class="swrole">Fondo m&aacute;s profundo, footer</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#0B0D12;"></div>
+        <div class="swname">carbon</div><div class="swhex">#0B0D12</div><div class="swrole">Fondo base del sitio</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#12151C;"></div>
+        <div class="swname">surface</div><div class="swhex">#12151C</div><div class="swrole">Cards, paneles</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#1A1E27;"></div>
+        <div class="swname">elevated</div><div class="swhex">#1A1E27</div><div class="swrole">Hover de card, dropdown</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#232833;"></div>
+        <div class="swname">line</div><div class="swhex">#232833</div><div class="swrole">Bordes y divisores</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#1B1F28;"></div>
+        <div class="swname">line-soft</div><div class="swhex">#1B1F28</div><div class="swrole">Divisor interno sutil</div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin:36px 0 14px;">Acento &mdash; azul el&eacute;ctrico</div>
+    <div style="display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:20px;">
+      <div>
+        <div class="sw" style="background:#2E6BFF;"></div>
+        <div class="swname">blue</div><div class="swhex">#2E6BFF</div><div class="swrole">Acci&oacute;n principal, foco</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#5B8CFF;"></div>
+        <div class="swname">blue-bright</div><div class="swhex">#5B8CFF</div><div class="swrole">Hover, links sobre oscuro</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#1747C9;"></div>
+        <div class="swname">blue-deep</div><div class="swhex">#1747C9</div><div class="swrole">Estado pressed</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#8FB0FF;"></div>
+        <div class="swname">blue-ice</div><div class="swhex">#8FB0FF</div><div class="swrole">Texto de &eacute;nfasis, degradados</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#12151C; box-shadow:inset 0 0 0 1px rgba(46,107,255,0.35); background-image:linear-gradient(0deg, rgba(46,107,255,0.12), rgba(46,107,255,0.12));"></div>
+        <div class="swname">blue-tint</div><div class="swhex">rgba(46,107,255,.12)</div><div class="swrole">Fondo de badge y chip</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#2558E6;"></div>
+        <div class="swname">blue-solid</div><div class="swhex">#2558E6</div><div class="swrole">Relleno de bot&oacute;n &mdash; blanco a 5.8:1</div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin:36px 0 14px;">Texto sobre oscuro</div>
+    <div style="display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:20px;">
+      <div>
+        <div class="sw" style="background:#FFFFFF;"></div>
+        <div class="swname">white</div><div class="swhex">#FFFFFF</div><div class="swrole">T&iacute;tulos de alto impacto</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#EDEFF3;"></div>
+        <div class="swname">text</div><div class="swhex">#EDEFF3</div><div class="swrole">Texto primario</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#A2AAB8;"></div>
+        <div class="swname">silver</div><div class="swhex">#A2AAB8</div><div class="swrole">P&aacute;rrafos secundarios</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#767E8D;"></div>
+        <div class="swname">muted</div><div class="swhex">#767E8D</div><div class="swrole">Labels y metadatos &mdash; 4.8:1, el gris m&aacute;s claro permitido para texto</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#F7F8FA;"></div>
+        <div class="swname">paper</div><div class="swhex">#F7F8FA</div><div class="swrole">Secciones en claro</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#E2E6ED;"></div>
+        <div class="swname">paper-line</div><div class="swhex">#E2E6ED</div><div class="swrole">Bordes sobre claro</div>
+      </div>
+    </div>
+
+    <div class="eyebrow" style="margin:36px 0 14px;">Sem&aacute;nticos &mdash; solo estados de interfaz</div>
+    <div style="display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); gap:20px;">
+      <div>
+        <div class="sw" style="background:#24C08A;"></div>
+        <div class="swname">success</div><div class="swhex">#24C08A</div><div class="swrole">Env&iacute;o correcto</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#E8A33D;"></div>
+        <div class="swname">warning</div><div class="swhex">#E8A33D</div><div class="swrole">Aviso</div>
+      </div>
+      <div>
+        <div class="sw" style="background:#E5484D;"></div>
+        <div class="swname">danger</div><div class="swhex">#E5484D</div><div class="swrole">Error de validaci&oacute;n</div>
+      </div>
+      <div style="grid-column:span 3; display:flex; flex-direction:column; justify-content:center; gap:10px;">
+        <p style="font-size:13.5px; line-height:1.7; color:#767E8D; text-wrap:pretty;">Regla de uso del acento: <span style="color:#A2AAB8;">como m&aacute;ximo un elemento azul s&oacute;lido por pantalla visible</span>. El resto del azul aparece como borde, texto o halo. Si todo es azul, nada destaca.</p>
+        <p style="font-size:13.5px; line-height:1.7; color:#767E8D; text-wrap:pretty;">Contraste: <span style="color:#A2AAB8;">#767E8D es el gris m&aacute;s claro admitido para texto</span> (4.8:1 sobre carb&oacute;n). Sobre la banda clara, el gris m&iacute;nimo es #5A6373. Los rellenos s&oacute;lidos usan #2558E6 y los enlaces sobre oscuro, #5B8CFF.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIPOGRAFIA -->
+  <div style="margin-top:64px; padding-top:48px; border-top:1px solid #232833;">
+    <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:24px;">
+      <h2 style="font-size:26px; color:#FFFFFF;">Tipograf&iacute;a</h2>
+      <span class="eyebrow">Sora &middot; Manrope &middot; JetBrains Mono</span>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:20px;">
+      <div class="panel" style="padding:26px 28px;">
+        <div style="font-family:'Sora',sans-serif; font-size:52px; font-weight:600; color:#FFFFFF; letter-spacing:-0.04em; line-height:1;">Aa</div>
+        <div style="font-size:15px; font-weight:600; color:#EDEFF3; margin-top:18px;">Sora</div>
+        <div class="swrole">Display y titulares. Pesos 600 / 700. Geom&eacute;trica, con car&aacute;cter t&eacute;cnico. Fallback: Segoe UI.</div>
+      </div>
+      <div class="panel" style="padding:26px 28px;">
+        <div style="font-family:'Manrope',sans-serif; font-size:52px; font-weight:500; color:#FFFFFF; letter-spacing:-0.03em; line-height:1;">Aa</div>
+        <div style="font-size:15px; font-weight:600; color:#EDEFF3; margin-top:18px;">Manrope</div>
+        <div class="swrole">Texto corrido, UI y botones. Pesos 400 / 500 / 600. Fallback: Segoe UI.</div>
+      </div>
+      <div class="panel" style="padding:26px 28px;">
+        <div class="mono" style="font-size:52px; font-weight:500; color:#FFFFFF; line-height:1;">Aa</div>
+        <div style="font-size:15px; font-weight:600; color:#EDEFF3; margin-top:18px;">JetBrains Mono</div>
+        <div class="swrole">Eyebrows, numeraci&oacute;n del proceso, precios t&eacute;cnicos. Peso 500. Fallback: Consolas.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px;">
+      <div class="row">
+        <div style="font-family:'Sora',sans-serif; font-size:84px; font-weight:600; letter-spacing:-0.042em; line-height:0.95; color:#FFFFFF;">Elevamos</div>
+        <div class="spec">display-xl<br>Sora 600 &middot; 84 / 0.95<br>tracking -0.042em</div>
+      </div>
+      <div class="row">
+        <div style="font-family:'Sora',sans-serif; font-size:64px; font-weight:600; letter-spacing:-0.038em; line-height:1; color:#FFFFFF;">Elevamos negocios</div>
+        <div class="spec">display-l<br>Sora 600 &middot; 64 / 1.0<br>tracking -0.038em</div>
+      </div>
+      <div class="row">
+        <div style="font-family:'Sora',sans-serif; font-size:48px; font-weight:600; letter-spacing:-0.032em; line-height:1.06; color:#FFFFFF;">T&iacute;tulo de secci&oacute;n</div>
+        <div class="spec">h1 &middot; Sora 600 &middot; 48 / 1.06</div>
+      </div>
+      <div class="row">
+        <div style="font-family:'Sora',sans-serif; font-size:36px; font-weight:600; letter-spacing:-0.028em; line-height:1.15; color:#FFFFFF;">Subt&iacute;tulo de secci&oacute;n</div>
+        <div class="spec">h2 &middot; Sora 600 &middot; 36 / 1.15</div>
+      </div>
+      <div class="row">
+        <div style="font-family:'Sora',sans-serif; font-size:28px; font-weight:600; letter-spacing:-0.022em; line-height:1.25; color:#FFFFFF;">T&iacute;tulo de card</div>
+        <div class="spec">h3 &middot; Sora 600 &middot; 28 / 1.25</div>
+      </div>
+      <div class="row">
+        <div style="font-family:'Sora',sans-serif; font-size:22px; font-weight:600; letter-spacing:-0.018em; line-height:1.3; color:#FFFFFF;">T&iacute;tulo menor</div>
+        <div class="spec">h4 &middot; Sora 600 &middot; 22 / 1.3</div>
+      </div>
+      <div class="row">
+        <div style="font-size:18px; font-weight:400; line-height:1.65; color:#A2AAB8;">Texto de introducci&oacute;n. Se usa debajo de los titulares y en los p&aacute;rrafos de apertura de cada secci&oacute;n.</div>
+        <div class="spec">body-l &middot; Manrope 400 &middot; 18 / 1.65</div>
+      </div>
+      <div class="row">
+        <div style="font-size:16px; font-weight:400; line-height:1.7; color:#A2AAB8;">Texto corrido por defecto. Medida m&aacute;xima de 68 caracteres por l&iacute;nea.</div>
+        <div class="spec">body &middot; Manrope 400 &middot; 16 / 1.7</div>
+      </div>
+      <div class="row">
+        <div style="font-size:14px; font-weight:400; line-height:1.6; color:#A2AAB8;">Texto de apoyo dentro de cards y listas de caracter&iacute;sticas.</div>
+        <div class="spec">body-s &middot; Manrope 400 &middot; 14 / 1.6</div>
+      </div>
+      <div class="row">
+        <div style="font-size:15px; font-weight:600; line-height:1.4; color:#EDEFF3;">Etiqueta de bot&oacute;n</div>
+        <div class="spec">button &middot; Manrope 600 &middot; 15 / 1.4</div>
+      </div>
+      <div class="row" style="border-bottom:none;">
+        <div class="mono" style="font-size:11px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#767E8D;">Eyebrow de secci&oacute;n</div>
+        <div class="spec">eyebrow &middot; Mono 500 &middot; 11 &middot; +0.18em</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESPACIADO -->
+  <div style="margin-top:64px; padding-top:48px; border-top:1px solid #232833;">
+    <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:24px;">
+      <h2 style="font-size:26px; color:#FFFFFF;">Espaciado</h2>
+      <span class="eyebrow">base 4px</span>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 380px; gap:48px;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">4</span><div style="height:14px; width:4px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">8</span><div style="height:14px; width:8px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">12</span><div style="height:14px; width:12px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">16</span><div style="height:14px; width:16px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">24</span><div style="height:14px; width:24px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">32</span><div style="height:14px; width:32px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">48</span><div style="height:14px; width:48px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">64</span><div style="height:14px; width:64px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">96</span><div style="height:14px; width:96px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">128</span><div style="height:14px; width:128px; background:#2E6BFF; border-radius:2px;"></div></div>
+        <div style="display:flex; align-items:center; gap:16px;"><span class="mono" style="width:52px; font-size:11.5px; color:#767E8D;">160</span><div style="height:14px; width:160px; background:#2E6BFF; border-radius:2px;"></div></div>
+      </div>
+      <div class="panel" style="padding:26px 28px; display:flex; flex-direction:column; gap:18px; align-self:start;">
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">Contenedor</div>
+          <div style="font-size:14px; color:#A2AAB8; line-height:1.7;">M&aacute;ximo <span style="color:#EDEFF3;">1200px</span>. Gutter 80px en escritorio, 24px en m&oacute;vil.</div>
+        </div>
+        <div style="height:1px; background:#232833;"></div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">Ritmo de secci&oacute;n</div>
+          <div style="font-size:14px; color:#A2AAB8; line-height:1.7;">Padding vertical <span style="color:#EDEFF3;">160px</span> en escritorio, <span style="color:#EDEFF3;">80px</span> en m&oacute;vil. Entre bloques de una misma secci&oacute;n: 48&ndash;64px.</div>
+        </div>
+        <div style="height:1px; background:#232833;"></div>
+        <div>
+          <div class="eyebrow" style="margin-bottom:8px;">Grid</div>
+          <div style="font-size:14px; color:#A2AAB8; line-height:1.7;">12 columnas, gap 24px. En m&oacute;vil colapsa a 1 columna con gap 16px.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RADIOS Y ELEVACION -->
+  <div style="margin-top:64px; padding-top:48px; border-top:1px solid #232833; display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:48px;">
+    <div>
+      <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:24px;">
+        <h2 style="font-size:26px; color:#FFFFFF;">Radios</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:16px;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#1A1E27; border:1px solid #232833; border-radius:6px;"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D;">6 &middot; chip</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#1A1E27; border:1px solid #232833; border-radius:10px;"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D;">10 &middot; botón</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#1A1E27; border:1px solid #232833; border-radius:16px;"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D;">16 &middot; card</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#1A1E27; border:1px solid #232833; border-radius:24px;"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D;">24 &middot; bloque</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#1A1E27; border:1px solid #232833; border-radius:999px;"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D;">full &middot; badge</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:24px;">
+        <h2 style="font-size:26px; color:#FFFFFF;">Elevaci&oacute;n</h2>
+        <span class="eyebrow">borde + sombra, nunca sombra sola</span>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px;">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#12151C; border:1px solid #232833; border-radius:14px; box-shadow:0 1px 2px rgba(0,0,0,0.4);"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D; text-align:center;">e1 &middot; reposo</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#1A1E27; border:1px solid #2A303C; border-radius:14px; box-shadow:0 12px 32px -12px rgba(0,0,0,0.8);"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D; text-align:center;">e2 &middot; hover</span>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+          <div style="width:100%; height:74px; background:#12151C; border:1px solid rgba(46,107,255,0.45); border-radius:14px; box-shadow:0 16px 44px -14px rgba(46,107,255,0.55);"></div>
+          <span class="mono" style="font-size:11px; color:#767E8D; text-align:center;">glow &middot; foco / CTA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOVIMIENTO -->
+  <div style="margin-top:64px; padding-top:48px; border-top:1px solid #232833;">
+    <div style="display:flex; align-items:baseline; gap:16px; margin-bottom:24px;">
+      <h2 style="font-size:26px; color:#FFFFFF;">Movimiento</h2>
+      <span class="eyebrow">discreto, nunca decorativo</span>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:20px;">
+      <div class="panel" style="padding:24px 26px;">
+        <div class="mono" style="font-size:22px; color:#5B8CFF;">150ms</div>
+        <div style="font-size:14px; font-weight:600; color:#EDEFF3; margin-top:10px;">fast</div>
+        <div class="swrole">Cambios de color: hover de link, borde de input.</div>
+      </div>
+      <div class="panel" style="padding:24px 26px;">
+        <div class="mono" style="font-size:22px; color:#5B8CFF;">250ms</div>
+        <div style="font-size:14px; font-weight:600; color:#EDEFF3; margin-top:10px;">base</div>
+        <div class="swrole">Botones y cards: elevaci&oacute;n, fondo, sombra.</div>
+      </div>
+      <div class="panel" style="padding:24px 26px;">
+        <div class="mono" style="font-size:22px; color:#5B8CFF;">400ms</div>
+        <div style="font-size:14px; font-weight:600; color:#EDEFF3; margin-top:10px;">slow</div>
+        <div class="swrole">Men&uacute; m&oacute;vil, acorde&oacute;n de FAQ.</div>
+      </div>
+      <div class="panel" style="padding:24px 26px;">
+        <div class="mono" style="font-size:22px; color:#5B8CFF;">700ms</div>
+        <div style="font-size:14px; font-weight:600; color:#EDEFF3; margin-top:10px;">reveal</div>
+        <div class="swrole">Entrada al hacer scroll, escalonada cada 80ms.</div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:20px; padding:26px 30px; display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:36px;">
+      <div>
+        <div class="eyebrow" style="margin-bottom:8px;">Curva por defecto</div>
+        <div class="mono" style="font-size:13px; color:#EDEFF3;">cubic-bezier(0.16, 1, 0.3, 1)</div>
+        <div class="swrole">Sale r&aacute;pido y frena suave. Es la curva de todo lo que aparece.</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:8px;">Entrada al scroll</div>
+        <div class="mono" style="font-size:13px; color:#EDEFF3;">opacity 0&rarr;1 + translateY 16&rarr;0</div>
+        <div class="swrole">Un solo gesto, una sola vez. Nada se mueve al volver a subir.</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:8px;">Accesibilidad</div>
+        <div class="mono" style="font-size:13px; color:#EDEFF3;">prefers-reduced-motion</div>
+        <div class="swrole">Con la preferencia activa se desactiva toda transici&oacute;n de posici&oacute;n.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

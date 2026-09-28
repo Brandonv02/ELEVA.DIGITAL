@@ -1,0 +1,40 @@
+{
+  "pages": [
+    { "id": "page-1", "name": "Home" },
+    { "id": "page-2", "name": "Design System" }
+  ],
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 7700, "page": "page-1", "title": "Home — escritorio 1440" },
+    { "file": "HomeMobile.dc.html", "x": 1620, "y": 0, "w": 390, "h": 8400, "page": "page-1", "title": "Home — móvil 390" },
+    { "file": "Logo.dc.html", "x": 0, "y": 0, "w": 1240, "h": 2000, "page": "page-2", "title": "01 · Logo y marca" },
+    { "file": "Foundations.dc.html", "x": 1400, "y": 0, "w": 1240, "h": 3700, "page": "page-2", "title": "02 · Fundamentos" },
+    { "file": "Components.dc.html", "x": 2800, "y": 0, "w": 1240, "h": 3000, "page": "page-2", "title": "03 · ELEVA UI" }
+  ],
+  "annotations": [
+    {
+      "id": "home-placeholders",
+      "x": -330,
+      "y": 40,
+      "w": 260,
+      "page": "page-1",
+      "text": "Segunda iteración.\n\nTodo lo que aparece entre corchetes es un hueco a llenar con datos reales: proyectos, foto de Brandon, teléfono, correo y ciudad.\n\nEl sitio dentro de la maqueta del hero es una demo del entregable, no un cliente real.\n\nLos estados hover son reales: pasa el cursor sobre botones y cards."
+    },
+    {
+      "id": "home-fixedbar",
+      "x": 2070,
+      "y": 940,
+      "w": 240,
+      "page": "page-1",
+      "text": "Barra fija de móvil.\n\nEn el build aparece cuando el hero sale de pantalla y se oculta cuando el CTA final entra, para no taparlo."
+    },
+    {
+      "id": "ds-tokens",
+      "x": -330,
+      "y": 40,
+      "w": 260,
+      "page": "page-2",
+      "text": "Estos tres artboards son la fuente de verdad del sistema.\n\nActualizado en la segunda iteración: muted pasa a #767E8D, los rellenos sólidos a #2558E6 y el gris mínimo sobre banda clara a #5A6373. Todos pasan AA.\n\nDe aquí salen las variables CSS y el theme de Tailwind."
+    }
+  ],
+  "launch": { "view": "canvas", "page": "page-1" }
+}

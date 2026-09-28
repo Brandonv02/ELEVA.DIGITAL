@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* ───────────────────────────────────────────────────────────────
+   ELEVA — Design tokens
+   Fuente de verdad: guía de marca oficial (brand alignment).
+   Paleta: Primary Blue #5B6BFF · Background #0D0F14 · Surface #1A1D24 ·
+   Muted Gray #7A7F8C · White #FFFFFF. Tonos intermedios derivados de
+   estos cinco valores para mantener jerarquía tipográfica y de estado.
+   ─────────────────────────────────────────────────────────────── */
+@theme {
+  /* Superficies */
+  --color-void: #08090c;
+  --color-carbon: #0d0f14; /* Background oficial */
+  --color-surface: #1a1d24; /* Surface oficial */
+  --color-surface-alt: #14161c;
+  --color-surface-deep: #101319;
+  --color-elevated: #21242d;
+  --color-elevated-hover: #262a34;
+  --color-line: #262a33;
+  --color-line-soft: #1b1e25;
+  --color-line-strong: #343945;
+  --color-line-hover: #454b59;
+
+  /* Texto sobre oscuro */
+  --color-ink: #ffffff; /* White oficial */
+  --color-silver: #a6aab5; /* cuerpo secundario, derivado de Muted Gray */
+  --color-muted: #7a7f8c; /* Muted Gray oficial — 4.8:1 sobre Background */
+  --color-disabled: #52565f; /* SOLO estados deshabilitados */
+
+  /* Banda clara */
+  --color-paper: #f7f8fa;
+  --color-paper-ink: #0d0f14;
+  --color-paper-muted: #5c616b;
+  --color-paper-line: #dde1e6;
+  --color-paper-grid: #e6e8ec;
+
+  /* Acento — Primary Blue oficial */
+  --color-accent: #5b6bff;
+  --color-accent-solid: #5b6bff;
+  --color-accent-bright: #7c87ff;
+  --color-accent-deep: #4450d9;
+  --color-accent-ice: #aeb6ff;
+
+  /* Semánticos */
+  --color-success: #24c08a;
+  --color-warning: #e8a33d;
+  --color-danger: #e5484d;
+
+  /* Tipografía — Poppins, familia única de marca */
+  --font-display: var(--font-poppins), "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-poppins), "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-poppins), "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  /* Radios */
+  --radius-chip: 6px;
+  --radius-control: 10px;
+  --radius-card: 16px;
+  --radius-block: 24px;
+
+  /* Movimiento */
+  --ease-eleva: cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-glow: elevaGlow 4s ease-in-out infinite;
+}
+
+@keyframes elevaGlow {
+  0%,
+  100% {
+    opacity: 0.82;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Base
+   ─────────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-carbon);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-accent) 32%, transparent);
+    color: #ffffff;
+  }
+
+  /* Foco visible del sistema: anillo azul de 3px. Nunca se elimina. */
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 38%, transparent);
+    border-radius: var(--radius-chip);
+  }
+
+  /* Ancla con offset para la navbar fija */
+  section[id] {
+    scroll-margin-top: 96px;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Utilidades del sistema
+   ─────────────────────────────────────────────────────────────── */
+@utility grid-bg {
+  background-image: linear-gradient(to right, #171a20 1px, transparent 1px),
+    linear-gradient(to bottom, #171a20 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility paper-grid-bg {
+  background-image: linear-gradient(to right, #e6e8ec 1px, transparent 1px),
+    linear-gradient(to bottom, #e6e8ec 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Barra del logo: corte diagonal en el extremo derecho */
+@utility eleva-bar {
+  clip-path: polygon(0 0, 100% 0, calc(100% - 34px) 100%, 0 100%);
+}
+
+/* Entrada al hacer scroll — una sola vez, un solo gesto.
+   El estado oculto vive bajo `.js`, que añade un script en línea del <head>.
+   Sin JavaScript (o si falla la hidratación) el contenido se ve completo:
+   nunca se esconde texto detrás de una animación. */
+.reveal {
+  transition:
+    opacity 700ms var(--ease-eleva),
+    transform 700ms var(--ease-eleva);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js .reveal[data-visible="false"] {
+  opacity: 0;
+  transform: translateY(16px);
+  will-change: opacity, transform;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   Accesibilidad: sin movimiento de posición si el sistema lo pide
+   ─────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .js .reveal[data-visible="false"] {
+    opacity: 1;
+    transform: none;
+  }
+}

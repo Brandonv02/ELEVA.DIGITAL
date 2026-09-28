@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+
+.env
+.env.local
+.env.*.local
+
+next-env.d.ts
+*.tsbuildinfo
+
+.DS_Store
+Thumbs.db
+.vercel
+
+# Canvas de diseño generado (se regenera con seed-canvas)
+design/eleva-design-system.html
