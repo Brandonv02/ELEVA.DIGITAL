@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { ContactLink } from "@/components/ui/ContactLink";
@@ -23,16 +24,20 @@ export function Founder() {
     >
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,440px)_minmax(0,1fr)] lg:gap-18">
-          {/* Retrato 4:5 — el formato del que va a salir la foto */}
+          {/* Retrato oficial de Brandon, encuadrado en el marco 4:5 existente. */}
           <Reveal>
-            <div className="grid-bg relative flex aspect-4/5 items-end justify-center overflow-hidden rounded-[20px] border border-line bg-surface p-7">
+            <div className="relative aspect-4/5 overflow-hidden rounded-[20px] border border-line bg-surface">
+              <Image
+                src="/images/brandon-vides.jpeg"
+                alt="Brandon Vides, Founder & Developer de ELEVA"
+                fill
+                sizes="(min-width: 1024px) 440px, calc(100vw - 3rem)"
+                className="object-cover object-center"
+              />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(91,107,255,0.14)_0%,rgba(13,15,20,0)_60%)]"
+                className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(91,107,255,0.14)_0%,rgba(13,15,20,0)_60%)]"
               />
-              <span className="relative font-mono text-[11px] tracking-[0.14em] text-muted sm:text-xs">
-                [ FOTO DE BRANDON — 4:5 ]
-              </span>
             </div>
           </Reveal>
 

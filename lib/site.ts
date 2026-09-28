@@ -76,6 +76,9 @@ const whatsappHref = whatsappDigits
     }`
   : null;
 
+const cityName = env.city.replace(/(?:,\s*Colombia)+$/i, "").trim();
+const cityLabel = cityName ? `${cityName}, ${site.country}` : site.country;
+
 export const contact = {
   whatsapp: whatsappHref
     ? resolved(whatsappHref, "Escribir por WhatsApp", "NEXT_PUBLIC_WHATSAPP_NUMBER")
@@ -94,7 +97,7 @@ export const contact = {
     : placeholder("Correo", "NEXT_PUBLIC_CONTACT_EMAIL"),
 
   city: env.city
-    ? resolved("", `${env.city}, ${site.country}`, "NEXT_PUBLIC_CITY")
+    ? resolved("", cityLabel, "NEXT_PUBLIC_CITY")
     : placeholder("Ubicación", "NEXT_PUBLIC_CITY"),
 
   instagram: env.instagram
