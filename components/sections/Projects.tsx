@@ -7,18 +7,26 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { contact } from "@/lib/site";
 
 /**
- * Catálogo de proyectos publicados. Se mantiene como una lista vacía hasta
- * que existan casos reales; agregar un caso no cambia el layout compartido.
+ * Catálogo de proyectos publicados. Cada caso contiene información real y
+ * puede enlazarse a su sitio.
  */
 export type Project = {
   name: string;
   sector: string;
-  year: string;
+  year?: string;
   summary: string;
   url?: string;
 };
 
-const projects: Project[] = [];
+const projects: Project[] = [
+  {
+    name: "Lo Más Cute",
+    sector: "E-commerce",
+    summary:
+      "Tienda en línea para una marca de belleza y lifestyle: catálogo con búsqueda y filtros, fichas de producto, favoritos, comparador, carrito y checkout. Incluye un panel administrativo conectado a Supabase para gestionar productos, categorías, inventario, pedidos y mensajes.",
+    url: "https://lomascute.vercel.app/",
+  },
+];
 
 export function Projects() {
   return (
@@ -28,20 +36,20 @@ export function Projects() {
           id="proyectos-titulo"
           eyebrow="Proyectos"
           title="Lo que estamos construyendo."
-          lead="Aquí compartiremos proyectos reales cuando estén listos para publicarse."
+          lead="Un proyecto publicado que puedes visitar."
           className="mb-10 lg:mb-14"
         />
 
         <div className="grid items-stretch gap-6 lg:grid-cols-3">
           <Reveal className="lg:col-span-2">
             {projects.length ? (
-              <div className="grid gap-6 sm:grid-cols-2">
+              <div className={projects.length === 1 ? "grid gap-6 sm:grid-cols-1" : "grid gap-6 sm:grid-cols-2"}>
                 {projects.map((project) => (
                   <article key={`${project.name}-${project.year}`} className="rounded-card border border-line bg-surface p-6">
-                    <Eyebrow>{project.sector} · {project.year}</Eyebrow>
+                    <Eyebrow>{project.sector}{project.year ? ` · ${project.year}` : ""}</Eyebrow>
                     <h3 className="mt-3 text-lg text-white sm:text-[22px]">{project.name}</h3>
                     <p className="mt-2 text-[14.5px] leading-[1.6] text-silver">{project.summary}</p>
-                    {project.url ? <a href={project.url} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex min-h-11 items-center font-semibold text-accent-bright hover:text-accent-ice">Ver proyecto <span className="sr-only">: {project.name}</span></a> : null}
+                    {project.url ? <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar ${project.name} (se abre en una nueva pestaña)`} className="mt-5 inline-flex min-h-11 items-center font-semibold text-accent-bright hover:text-accent-ice">Ver proyecto <span className="sr-only">: {project.name}</span></a> : null}
                   </article>
                 ))}
               </div>
